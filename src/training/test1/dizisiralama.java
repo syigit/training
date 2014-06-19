@@ -1,4 +1,5 @@
-package deneme;
+package training.test1;
+
 import java.util.Scanner;
 public class dizisiralama {
 public static void main(String args[])
