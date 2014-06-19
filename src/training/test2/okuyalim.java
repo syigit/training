@@ -9,20 +9,20 @@ import java.io.IOException;
 public class okuyalim {
 
     public static void main(String[] args) throws IOException {
-        // String [] dizi=new String[10];
+        String [] dizi=new String[10];
         File dosya = new File("C:/Users/MyComputer/Desktop/sayilar.txt");
         BufferedReader reader = null;
         reader = new BufferedReader(new FileReader(dosya));
         String satir = (reader.readLine());
-        //int i=0;
+        int i=0;
         while (satir != null) {
-            //   	dizi[i]=satir; amacým burada dosyadan çektiðim deðerlerden dizi oluþturmak ama malesef hata veriyor.
-            //   	i++;
+              	dizi[i]=satir; //amacým burada dosyadan çektiðim deðerlerden dizi oluþturmak ama malesef hata veriyor.
+              	i++;
             satir = reader.readLine();
-            System.out.println(satir);
+           // System.out.println(satir);
         }
-        //    for(int j=0;j<dizi.length;j++)
-        //   	System.out.println(dizi[j]);
+           for(int j=0;j<i;j++)
+           	System.out.println(dizi[j]);
         reader.close();
     }
 }
