@@ -52,6 +52,8 @@ public class dizisiralama {
     		System.out.println(dizi[j]);
     reader.close();
 }
+	else
+		System.out.println("Lütfen 1 ya da 2 Giriniz");
 }
 
         
