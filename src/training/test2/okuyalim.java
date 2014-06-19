@@ -10,7 +10,7 @@ public class okuyalim {
 
     public static void main(String[] args) throws IOException {
         String [] dizi=new String[10];
-        File dosya = new File("C:/Users/MyComputer/Desktop/sayilar.txt");
+        File dosya = new File("Inputs/sayilar.txt");
         BufferedReader reader = null;
         reader = new BufferedReader(new FileReader(dosya));
         String satir = (reader.readLine());
