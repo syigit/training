@@ -21,6 +21,7 @@ public class Okuyalim {
             satir = reader.readLine();
            // System.out.println(satir);
         }
+        
            for(int j=0;j<i;j++)
            	System.out.println(dizi[j]);
         reader.close();
