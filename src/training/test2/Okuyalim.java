@@ -16,10 +16,9 @@ public class Okuyalim {
         String satir = (reader.readLine());
         int i=0;
         while (satir != null) {
-              	dizi[i]=satir; //amacým burada dosyadan çektiðim deðerlerden dizi oluþturmak ama malesef hata veriyor.
+              	dizi[i]=satir;
               	i++;
             satir = reader.readLine();
-           // System.out.println(satir);
         }
         
            for(int j=0;j<i;j++)
