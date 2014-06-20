@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-public class dizisiralama {
+public class DiziSiralama {
+
 	private static Scanner scanNumber;
 	public static void main(String[] args) throws IOException
 {	
@@ -38,7 +39,7 @@ public class dizisiralama {
 	else if (menuSelect==2)
 	{	
 		int [] dizi=new int[10];
-        File dosya = new File("Inputs/sayilar.txt");
+        File dosya = new File("Inputs/Sayilar.txt");
         BufferedReader reader = null;
         reader = new BufferedReader(new FileReader(dosya));
         String satir = (reader.readLine());
