@@ -11,3 +11,6 @@
 20.06.2014 16:15:06 ERROR (DiziSiralama.java:52) - Okuma Basladi
 20.06.2014 16:15:30  INFO (DiziSiralama.java:47) - Inputs/Sayilar.txt dosyasindan degerler cekiliyor.
 20.06.2014 16:15:58  INFO (DiziSiralama.java:47) - Inputs/Sayilar.txt dosyasindan degerler cekiliyor.
+20.06.2014 16:30:00  INFO (DiziSiralama.java:22) - Diziniz Hazirlaniyor
+20.06.2014 16:30:00  INFO (DiziSiralama.java:29) - Diziniz Yazdýrýlýyor
+20.06.2014 16:30:00  INFO (DiziSiralama.java:36) - Diziniz Kucukten Buyuge Siralaniyor.
