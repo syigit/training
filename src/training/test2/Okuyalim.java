@@ -1,15 +1,16 @@
 package training.test2;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 public class Okuyalim {
 
     public static void main(String[] args) throws IOException {
-        String [] dizi=new String[10];
+    
+    	String [] dizi=new String[10];
         File dosya = new File("Inputs/Sayilar.txt");
         BufferedReader reader = null;
         reader = new BufferedReader(new FileReader(dosya));

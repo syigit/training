@@ -4,11 +4,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import org.apache.log4j.*;
 public class DiziSiralama {
-
+	private static org.apache.log4j.Logger log = Logger.getLogger(DiziSiralama.class);
 	private static Scanner scanNumber;
 	public static void main(String[] args) throws IOException
-{	
+{			
 	scanNumber = new Scanner(System.in);
 	System.out.println("(1)Rastgele Dizi Oluþturmak-(2) Dosyadan Dizi Çekmek");
 	int menuSelect=Integer.parseInt(scanNumber.nextLine());
@@ -18,18 +19,21 @@ public class DiziSiralama {
 	int arrayElement;
 	arrayElement=Integer.parseInt(scanNumber.nextLine());
 	System.out.println(arrayElement+" Elemanlý Diziniz Hazýrlanýyor...");
+	log.info("Diziniz Hazirlaniyor");
 	int [] dizi=new int[arrayElement];
 	for (int i=0;i<dizi.length;i++)
 	{
 		dizi[i]=(int)(Math.random()*100);
 	}
 	System.out.println(arrayElement+" Elemanlý Diziniz Yazdýrýlýyor...");
+	log.info("Diziniz Yazdýrýlýyor");
 	for (int j=0;j<dizi.length;j++)
 	{
 		System.out.println((j+1)+" nci elemanýnýz= "+dizi[j]);
 		
 	}		
 	System.out.println("Diziniz Küçükten Büyüðe Sýralanýyor");
+	log.info("Diziniz Kucukten Buyuge Siralaniyor.");
 	arraySort(dizi, arrayElement);
 	for (int i = 0; i < arrayElement; i++)
 	{	
@@ -39,9 +43,14 @@ public class DiziSiralama {
 	else if (menuSelect==2)
 	{	
 		int [] dizi=new int[10];
-        File dosya = new File("Inputs/Sayilar.txt");
+        File dosya = new File("Inputs/Sayilar.txt");        	
+        log.info("Inputs/Sayilar.txt dosyasindan degerler cekiliyor.");
         BufferedReader reader = null;
         reader = new BufferedReader(new FileReader(dosya));
+        if (reader.ready()==false)
+        {
+        	log.error("Okuma Gerceklestirilemedi");
+        }
         String satir = (reader.readLine());
         int i=0;
         while (satir != null) {
@@ -54,7 +63,12 @@ public class DiziSiralama {
     reader.close();
 }
 	else
+		
+		{
 		System.out.println("Lütfen 1 ya da 2 Giriniz");
+		log.error("Hatali Giris Yaptiniz");
+		}
+	 	
 }        
 static void arraySort(int a[], int size) {
 for (int i = 1; i < size; i++) {
