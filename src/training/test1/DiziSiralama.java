@@ -1,13 +1,28 @@
 package training.test1;
+/**
+ * @author SerdarYIGIT
+ * @author MustafaBICER
+ * @since 24.06.2014
+ */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 import org.apache.log4j.*;
+/**
+ * 
+ *@param log nesnesi Log islemleri icin Logger class`indan turetilir.
+ *@param scanNumber nesnesi okuma islemleri icin Scanner Class`indan turetilir.
+ */
 public class DiziSiralama {
 	private static org.apache.log4j.Logger log = Logger.getLogger(DiziSiralama.class);
 	private static Scanner scanNumber;
+	/**
+	 * 
+	 * @param args  metodumuz string degerli argumanlari icerir
+	 * @throws IOException hata yakalar.
+	 */
 	public static void main(String[] args) throws IOException
 {			
 	scanNumber = new Scanner(System.in);
@@ -69,7 +84,12 @@ public class DiziSiralama {
 		log.error("Hatali Giris Yaptiniz");
 		}
 	 	
-}        
+}    
+	/**
+	 * 
+	 * @param a dizi degiskenini tutar.
+	 * @param size dizi boyutunu tutar.
+	 */
 static void arraySort(int a[], int size) {
 for (int i = 1; i < size; i++) {
 int x = a[i];

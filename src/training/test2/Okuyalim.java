@@ -5,9 +5,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-
+/**
+ * @author SerdarYIGIT
+ * @author MustafaBICER
+ * @since 24.06.2014
+ *
+ */
 public class Okuyalim {
-
+/**
+ * 
+ * @param args
+ * @throws IOException
+ */
     public static void main(String[] args) throws IOException {
     
     	String [] dizi=new String[10];
