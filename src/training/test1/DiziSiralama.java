@@ -1,9 +1,5 @@
 package training.test1;
-/**
- * @author SerdarYIGIT
- * @author MustafaBICER
- * @since 24.06.2014
- */
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -11,11 +7,12 @@ import java.io.IOException;
 import java.util.Scanner;
 import org.apache.log4j.*;
 /**
- * 
- *@param log nesnesi Log islemleri icin Logger class`indan turetilir.
- *@param scanNumber nesnesi okuma islemleri icin Scanner Class`indan turetilir.
+ * @author SerdarYIGIT
+ * @author MustafaBICER
+ * @since 24.06.2014
  */
 public class DiziSiralama {
+
 	private static org.apache.log4j.Logger log = Logger.getLogger(DiziSiralama.class);
 	private static Scanner scanNumber;
 	/**
