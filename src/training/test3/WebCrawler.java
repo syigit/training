@@ -15,13 +15,13 @@ public class WebCrawler {
 	/**
 	 * 
 	 * @param args metodumuz string degerli argumanlari icerir
-	 * @throws IOException hata ayýklar
+	 * @throws IOException hata ayiklar
 	 */
 	public static void main(String args[]) throws IOException
 	{
 		/**
-		 * @param doc varsayýlan site dokumanýmýzdýr.
-		 * @oaram links sitedeki doc.select ile seçtiðimiz satýrlarý tutar.
+		 * @param doc varsayilan site dokumanimizdir.
+		 * @param links sitedeki doc.select ile sectigimiz satirlari tutar.
 		 */
 		 Document doc = Jsoup.connect("http://safkoy.com").get();
 		 Elements links = doc.select("a[href]");
