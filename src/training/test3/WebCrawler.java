@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 /**
  * @author MustafaBICER
@@ -24,11 +25,15 @@ public class WebCrawler {
 		 * @param links sitedeki doc.select ile sectigimiz satirlari tutar.
 		 */
 		 Document doc = Jsoup.connect("http://safkoy.com").get();
-		 Elements links = doc.select("a[href]");
-		 System.out.println(links);   
+		 Elements links = doc.select("a");
 		 FileWriter outFile = new FileWriter(new File("Inputs/linkler.txt"));
          PrintWriter fileOut = new PrintWriter(outFile);
-         fileOut.println(links);
+		 for (Element link:links)
+		 {
+			 System.out.println(link.attr("href")); 
+			 fileOut.println(link.attr("href"));
+		 }
+        
          fileOut.close();
 	}
 	
