@@ -15,6 +15,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class HtmlUnitExample {
 	public static void main(String[] args) throws IOException, Exception{
+		int deneme = 0;
 		WebClient webClient = new WebClient(BrowserVersion.CHROME);
 		final List<String> collectedAlerts = new ArrayList<String>();
 		webClient.setAlertHandler(new CollectingAlertHandler(collectedAlerts));
@@ -30,7 +31,7 @@ public class HtmlUnitExample {
 		webClient.getOptions().setThrowExceptionOnFailingStatusCode(true);
 		webClient.getOptions().setThrowExceptionOnScriptError(true);
 		webClient.getOptions().setPrintContentOnFailingStatusCode(true);
-		WebRequest request = new WebRequest(new URL("http://localhost/solar"), HttpMethod.GET);
+		WebRequest request = new WebRequest(new URL("http://www.simpleweb.org/"), HttpMethod.GET);
 		try {
 		    HtmlPage page = webClient.getPage(request);
 		    webClient.waitForBackgroundJavaScript(10000);
@@ -38,6 +39,8 @@ public class HtmlUnitExample {
 		    for (int i = 0; i < 20; i++) {
 		        synchronized (page) {
 		            page.wait(500);
+		            deneme=i;
+		            
 		        }
 		        return;
 		    }
@@ -45,6 +48,7 @@ public class HtmlUnitExample {
 		    webClient.closeAllWindows();
 		    for (final String alert : collectedAlerts) {
 		        System.out.println("ALERT: " + alert);
+		        System.out.println(deneme);
 		    }
 		}
 	}

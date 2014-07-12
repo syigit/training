@@ -9,7 +9,7 @@ public class HtmlUnitSimple {
 public static void main(String args []) throws FailingHttpStatusCodeException, IOException, IOException
 {
 WebClient browser=new WebClient(); //Creating virtual browser
-HtmlPage page=browser.getPage("http://safkoy.com"); // open web page at browser
+HtmlPage page=browser.getPage("http://www.simpleweb.org/"); // open web page at browser
 System.out.println(page.asText());// print page
 }
 }
