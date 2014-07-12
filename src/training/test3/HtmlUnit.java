@@ -18,6 +18,5 @@ public class HtmlUnit {
 	ScriptResult result = page.executeJavaScript(javaScriptCode);
 	result.getJavaScriptResult();
 	System.out.println("result: "+ result);
-
 	}
 }
