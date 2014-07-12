@@ -1,35 +1,208 @@
-http://www.twitter.com/
-http://www.facebook.com/
-http://www.google.com/
-/solar
-http://localhost/solar
-http://localhost/solar/?page_id=127
-http://localhost/solar/?page_id=130
-http://localhost/solar/?page_id=133
-http://localhost/solar/?page_id=136
-http://localhost/solar/?page_id=141
-http://localhost/solar/?page_id=250
-http://localhost/solar/?page_id=144
+index.php?do=members/login
+index.php?do=members/signup
+/
+index.php?do=catalog/order
+index.php?do=catalog/order
+/
+index.php?do=dynamic/view&pid=6
+index.php?do=dynamic/view&pid=7
+index.php?do=catalog/featuredProducts
+index.php?do=static/contactus
+/
+http://www.safkoy.com/Kisisel-Bakim,LA_109-2.html
+http://www.safkoy.com/Cilt-Bakimi,LA_118-2.html
+http://www.safkoy.com/Yuz-Bakimi--Anti-aging,LA_126-2.html
+http://www.safkoy.com/El-ve-Ayak-Bakimi,LA_127-2.html
+http://www.safkoy.com/Vucut-Bakimi-ve-Masaj,LA_128-2.html
+http://www.safkoy.com/Epilasyon-ve-Tiras,LA_129-2.html
+http://www.safkoy.com/Gunes-Urunleri,LA_248-2.html
+http://www.safkoy.com/Sac-Bakimi,LA_117-2.html
+http://www.safkoy.com/Sampuan-ve-Sac-Kremi,LA_123-2.html
+http://www.safkoy.com/Maske-ve-Sekillendiriciler,LA_124-2.html
+http://www.safkoy.com/Sac-Boyasi,LA_125-2.html
+http://www.safkoy.com/Sabun,LA_121-2.html
+http://www.safkoy.com/Koku-ve-Parfum,LA_244-2.html
+http://www.safkoy.com/Makyaj,LA_120-2.html
+http://www.safkoy.com/Ruj-ve-Dudak-Kalemi,LA_132-2.html
+http://www.safkoy.com/Fondoten-ve-Allik,LA_133-2.html
+http://www.safkoy.com/Goz-Makyaji-ve-Rimel,LA_134-2.html
+http://www.safkoy.com/Makyaj-Temizleme,LA_1074-2.html
+http://www.safkoy.com/Agiz-Bakimi,LA_119-2.html
+http://www.safkoy.com/Dis-Macunu-ve-Beyazlatici,LA_131-2.html
+http://www.safkoy.com/Agiz-Spreyi-ve-Calkalama,LA_220-2.html
+http://www.safkoy.com/Erkek-Bakimi,LA_122-2.html
+http://www.safkoy.com/Hammaddeler,LA_243-2.html
+http://www.safkoy.com/Anne-Bebek-Cocuk,LA_110-2.html
+http://www.safkoy.com/Bebek-Giyim-ve-Tekstil,LA_136-2.html
+http://www.safkoy.com/Bebek-Giyim,LA_140-2.html
+http://www.safkoy.com/Bebek-Nevresim-ve-Battaniye,LA_141-2.html
+http://www.safkoy.com/Bebek-Havlu,LA_142-2.html
+http://www.safkoy.com/Cocuk-Giyim,LA_1098-2.html
+http://www.safkoy.com/Bebek-Bakimi,LA_137-2.html
+http://www.safkoy.com/Bebek-Banyo-ve-Bakim,LA_143-2.html
+http://www.safkoy.com/Krem-ve-Losyon,LA_144-2.html
+http://www.safkoy.com/Bebek-Mamasi,LA_1136-2.html
+http://www.safkoy.com/Oyuncaklar,LA_139-2.html
+http://www.safkoy.com/Hijyen-ve-Temizlik,LA_251-2.html
+http://www.safkoy.com/Kadin-Hijyen,LA_263-2.html
+http://www.safkoy.com/Ev-ve-Tekstil,LA_111-2.html
+http://www.safkoy.com/Ev-Tekstili,LA_153-2.html
+http://www.safkoy.com/Nevresim-ve-Battaniye,LA_154-2.html
+http://www.safkoy.com/Havlu-Bornoz,LA_155-2.html
+http://www.safkoy.com/Mutfak,LA_161-2.html
+http://www.safkoy.com/Bulasik-ve-Temizlik,LA_253-2.html
+http://www.safkoy.com/Temizlik,LA_1077-2.html
+http://www.safkoy.com/Banyo-ve-Yuzey-Temizligi,LA_1082-2.html
+http://www.safkoy.com/Camasir-Temizligi,LA_1081-2.html
+http://www.safkoy.com/Giyim-ve-Aksesuar,LA_1078-2.html
+http://www.safkoy.com/Dis-Giyim,LA_1083-2.html
+http://www.safkoy.com/Ic-Giyim,LA_1084-2.html
+http://www.safkoy.com/Banyo,LA_162-2.html
+http://www.safkoy.com/Dus-Jeli-ve-Kese,LA_256-2.html
+http://www.safkoy.com/Spa-ve-Banyo-Tuzu,LA_257-2.html
+http://www.safkoy.com/Sabun,LA_258-2.html
+http://www.safkoy.com/Evcil-Hayvan-Kedi-Kopek,LA_1085-2.html
+http://www.safkoy.com/Kedi-Kopek-Mama,LA_1086-2.html
+http://www.safkoy.com/Kedi-Kopek-Oyuncak-ve-Bakim,LA_1088-2.html
+http://www.safkoy.com/Gida-ve-Diyet,LA_112-2.html
+http://www.safkoy.com/Cay-ve-Diger-Icecek,LA_172-2.html
+http://www.safkoy.com/Siyah-ve-Yesil-Cay,LA_173-2.html
+http://www.safkoy.com/Bitki-Caylari,LA_174-2.html
+http://www.safkoy.com/Kahve,LA_175-2.html
+http://www.safkoy.com/Sut-Urunleri-ve-Yumurta,LA_165-2.html
+http://www.safkoy.com/Yumurta-ve-Kumes,LA_180-2.html
+http://www.safkoy.com/Dusuk-Kalorili-Diyet-Yiyecekler,LA_166-2.html
+http://www.safkoy.com/Bal-Recel-Pekmez,LA_167-2.html
+http://www.safkoy.com/Zeytin-Zeytinyagi,LA_168-2.html
+http://www.safkoy.com/Konserve-Salca-Sos,LA_169-2.html
+http://www.safkoy.com/Kuru-Yemis-ve-Meyve,LA_170-2.html
+http://www.safkoy.com/Baharat-Tuz-Seker-Un,LA_171-2.html
+http://www.safkoy.com/Bakliyat-ve-Corbalar,LA_246-2.html
+http://www.safkoy.com/Cikolata-Krema-Atistirmalik,LA_283-2.html
+http://www.safkoy.com/Saglik,LA_113-2.html
+http://www.safkoy.com/Agiz-ve-Dis-Sagligi,LA_222-2.html
+http://www.safkoy.com/Dis-Macunu-ve-Beyazlatici,LA_224-2.html
+http://www.safkoy.com/Agiz-Spreyi-ve-Calkalama,LA_225-2.html
+http://www.safkoy.com/Gunes-ve-Alerji-Urunleri,LA_227-2.html
+http://www.safkoy.com/Anti-aging-Urunleri-,LA_228-2.html
+http://www.safkoy.com/Erkek,LA_115-2.html
+http://www.safkoy.com/Erkek-Giyim,LA_188-2.html
+http://www.safkoy.com/Erkek-Kisisel-Bakim,LA_189-2.html
+http://www.safkoy.com/Sabun,LA_190-2.html
+http://www.safkoy.com/Saglik,LA_191-2.html
+http://www.safkoy.com/Vejeteryan-ve-Glutensiz,LA_262-2.html
+http://www.safkoy.com/Glutensiz-Gida,LA_1096-2.html
+http://www.safkoy.com/Vejeteryan-Kisisel-Bakim,LA_1097-2.html
+http://www.safkoy.com/Ozel-Paketler,LA_116-2.html
+http://www.safkoy.com/Kadin-Bakim-Paketleri,LA_193-2.html
+http://www.safkoy.com/Anne-Bebek-Paketleri,LA_194-2.html
+http://www.safkoy.com/Dort-Mevsim-Saglik-Paketleri,LA_195-2.html
+http://www.safkoy.com/Erkek-Paketleri,LA_196-2.html
+http://www.safkoy.com/Temizlik-Paketleri,LA_197-2.html
+http://www.safkoy.com/Gida-Paketleri,LA_198-2.html
+http://www.safkoy.com/Ramazan-Paketleri,LA_1130-2.html
+http://www.safkoy.com/Hipp,LA_1135-3.html#labels=1135-3
+http://www.safkoy.com/Dogal-Keci-Sutu-El-Sabunu,PR-225.html
+http://www.safkoy.com/Glutensiz-Gida,LA_1096-2.html#labels=1096-2
+http://www.safkoy.com/Endonezya-Filtre-Kahve-250GR,PR-1813.html
+http://www.safkoy.com/Organik-Polen-130GR,PR-2530.html
+http://www.safkoy.com/Kisisel-Bakim,LA_109-2.html#labels=109-2
+http://www.safkoy.com/Agiz-Bakimi,LA_119-2.html#labels=119-2
+http://www.safkoy.com/Bulasik-ve-Temizlik,LA_253-2.html#labels=253-2
 
 
 
 
-#slider_lite
-#slider_lite
 
-
-
-http://localhost/solar/wp-content/uploads/2014/06/is6.jpg
-http://localhost/solar/wp-content/uploads/2014/06/is7.jpg
-http://localhost/solar/wp-content/uploads/2014/06/is8.jpg
-http://localhost/solar/wp-content/uploads/2014/06/is5.jpg
-http://localhost/solar/?page_id=127
-http://localhost/solar/?page_id=130
-http://localhost/solar/?page_id=133
-http://localhost/solar/?page_id=136
-http://localhost/solar/?page_id=141
-http://localhost/solar/?page_id=250
-http://localhost/solar/?page_id=144
-http://cyberchimps.com/
-http://eraybektas.com
-mailto:mstfbiccer@gmail.com
+Organik-Rize-Cayi-400GR,PR-3697.html
+Organik-Rize-Cayi-400GR,PR-3697.html
+ Caykur,LA_1137-3.html
+Organik-Rize-Cayi-400GR,PR-3697.html
+Beslenme-Gerecleri-ve-Biberon-Temizleyici-414ML,PR-3670.html
+Beslenme-Gerecleri-ve-Biberon-Temizleyici-414ML,PR-3670.html
+ Friendly-Organic,LA_1111-3.html
+Beslenme-Gerecleri-ve-Biberon-Temizleyici-414ML,PR-3670.html
+Glutensiz-Un-1KG,PR-3551.html
+Glutensiz-Un-1KG,PR-3551.html
+ Sinangil,LA_1127-3.html
+Glutensiz-Un-1KG,PR-3551.html
+Pronot-Glutensiz-Kakaolu-Mini-Kek-144GR,PR-3728.html
+Pronot-Glutensiz-Kakaolu-Mini-Kek-144GR,PR-3728.html
+ Eti,LA_1139-3.html
+Pronot-Glutensiz-Kakaolu-Mini-Kek-144GR,PR-3728.html
+Organik-Bebek-Sampuani-200ML,PR-3720.html
+Organik-Bebek-Sampuani-200ML,PR-3720.html
+ Dalin,LA_1138-3.html
+Organik-Bebek-Sampuani-200ML,PR-3720.html
+Hugga-Anvelop-Body,PR-1723.html
+Hugga-Anvelop-Body,PR-1723.html
+ Wakamono,LA_231-3.html
+Hugga-Anvelop-Body,PR-1723.html
+Organik-Seftali-Puresi-125GR,PR-3692.html
+Organik-Seftali-Puresi-125GR,PR-3692.html
+ Hipp,LA_1135-3.html
+Organik-Seftali-Puresi-125GR,PR-3692.html
+Nocciolatta-Kakaolu-Findik-Kremasi-270GR,PR-1822.html
+Nocciolatta-Kakaolu-Findik-Kremasi-270GR,PR-1822.html
+ Rigoni-di-Asiago,LA_272-3.html
+Nocciolatta-Kakaolu-Findik-Kremasi-270GR,PR-1822.html
+Organik-Sizma-Ekstra-Naturel-Zeytin-Yagi-2-lt,PR-297.html
+Organik-Sizma-Ekstra-Naturel-Zeytin-Yagi-2-lt,PR-297.html
+ BeyOrganik,LA_200-3.html
+Organik-Sizma-Ekstra-Naturel-Zeytin-Yagi-2-lt,PR-297.html
+Organik-Kozlenmis-Biber-380GR,PR-3637.html
+Organik-Kozlenmis-Biber-380GR,PR-3637.html
+ Baktat,LA_1129-3.html
+Organik-Kozlenmis-Biber-380GR,PR-3637.html
+Organik-Pilavlik-Bulgur-Adiyaman-1000GR,PR-319.html
+Organik-Pilavlik-Bulgur-Adiyaman-1000GR,PR-319.html
+ BeyOrganik,LA_200-3.html
+Organik-Pilavlik-Bulgur-Adiyaman-1000GR,PR-319.html
+Plus-Glutensiz-Burgu-Makarna-400GR,PR-3653.html
+Plus-Glutensiz-Burgu-Makarna-400GR,PR-3653.html
+ Arbella,LA_1131-3.html
+Plus-Glutensiz-Burgu-Makarna-400GR,PR-3653.html
+Aloe-Vera-Icerikli-El-Kremi-100ML,PR-3289.html
+Aloe-Vera-Icerikli-El-Kremi-100ML,PR-3289.html
+ Organic-Circle,LA_1112-3.html
+Aloe-Vera-Icerikli-El-Kremi-100ML,PR-3289.html
+Organik-Sari-Kantaron-Yagi-50ML,PR-3446.html
+Organik-Sari-Kantaron-Yagi-50ML,PR-3446.html
+ Happy-Moments,LA_1118-3.html
+Organik-Sari-Kantaron-Yagi-50ML,PR-3446.html
+100-Dogal-Ter-Onleyici-Stick,PR-3549.html
+100-Dogal-Ter-Onleyici-Stick,PR-3549.html
+ Perspi,LA_1126-3.html
+100-Dogal-Ter-Onleyici-Stick,PR-3549.html
+Ultra-Konsantre-Sivi-Camasir-Makinesi-Deterjani-750ML,PR-661.html
+Ultra-Konsantre-Sivi-Camasir-Makinesi-Deterjani-750ML,PR-661.html
+ Ecos3,LA_208-3.html
+Ultra-Konsantre-Sivi-Camasir-Makinesi-Deterjani-750ML,PR-661.html
+Dogal-Keci-Sutu-El-Sabunu,PR-225.html
+Dogal-Keci-Sutu-El-Sabunu,PR-225.html
+ More-Than-Soap,LA_201-3.html
+Dogal-Keci-Sutu-El-Sabunu,PR-225.html
+Organik-Pamuk-Yenidogan-Havlu-Mendil-3-Al-2-Ode,PR-3725.html
+Organik-Pamuk-Yenidogan-Havlu-Mendil-3-Al-2-Ode,PR-3725.html
+ Dalin,LA_1138-3.html
+Organik-Pamuk-Yenidogan-Havlu-Mendil-3-Al-2-Ode,PR-3725.html
+Ekonomik-Ramazan-Paketi-Pilavlik-Bulgur-Makarna-Domates-SalcasiZeytinyagiYumurta,PR-3657.html
+Ekonomik-Ramazan-Paketi-Pilavlik-Bulgur-Makarna-Domates-SalcasiZeytinyagiYumurta,PR-3657.html
+ index.php?do=catalog/start
+Ekonomik-Ramazan-Paketi-Pilavlik-Bulgur-Makarna-Domates-SalcasiZeytinyagiYumurta,PR-3657.html
+Hos-Sabun-Paketi-Portakal-Lifli-Sabun-Cam-Sakizi-Parfumlu-Sabun-Okaliptus-Aromali-Sivi-Sabun-Incir-Aromali-Sabun,PR-2204.html
+Hos-Sabun-Paketi-Portakal-Lifli-Sabun-Cam-Sakizi-Parfumlu-Sabun-Okaliptus-Aromali-Sivi-Sabun-Incir-Aromali-Sabun,PR-2204.html
+ index.php?do=catalog/start
+Hos-Sabun-Paketi-Portakal-Lifli-Sabun-Cam-Sakizi-Parfumlu-Sabun-Okaliptus-Aromali-Sivi-Sabun-Incir-Aromali-Sabun,PR-2204.html
+Organik-Makarna-Paketi-Spagetti-Burgu-Makarna-Yuzuk-Makarna-Kalem-Makarna,PR-2193.html
+Organik-Makarna-Paketi-Spagetti-Burgu-Makarna-Yuzuk-Makarna-Kalem-Makarna,PR-2193.html
+ index.php?do=catalog/start
+Organik-Makarna-Paketi-Spagetti-Burgu-Makarna-Yuzuk-Makarna-Kalem-Makarna,PR-2193.html
+markalar.html
+http://www.safkoy.com/Standart-Ramazan-Paketi-Cicek-Bali-Yumurta-Salca-Bulgur-Mercimek-Fasulye-Incir,PR-3600.html
+/
+/
+/
+http://www.safkoy.com/Ozel-Paketler,LA_116-2.html#labels=196-2
+http://www.ideasoft.com.tr
+http://www.eticaret.com

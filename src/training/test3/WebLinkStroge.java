@@ -23,7 +23,7 @@ public class WebLinkStroge{
 		 * @param doc varsayilan site dokumanimizdir.
 		 * @param links sitedeki doc.select ile sectigimiz satirlari tutar.
 		 */
-		 Document doc = Jsoup.connect("http://localhost/solar").post();
+		 Document doc = Jsoup.connect("http://safkoy.com").post();
 		 Elements links = doc.select("a");
 		 FileWriter outFile = new FileWriter(new File("Inputs/linkler.txt"));
          PrintWriter fileOut = new PrintWriter(outFile);
@@ -32,7 +32,6 @@ public class WebLinkStroge{
 			 System.out.println(link.attr("href")); 
 			 fileOut.println(link.attr("href"));
 
-			 
 		 }
         
          fileOut.close();
