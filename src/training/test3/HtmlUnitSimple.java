@@ -14,7 +14,6 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 public class HtmlUnitSimple {
 public static void main(String args []) throws FailingHttpStatusCodeException, IOException, IOException
 {
-
 final WebClient browser = new WebClient();
 WebRequest request = new WebRequest(new URL("http://localhost/solar"));
 browser.getOptions().setThrowExceptionOnScriptError(false);

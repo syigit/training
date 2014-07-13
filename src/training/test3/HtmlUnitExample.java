@@ -11,11 +11,11 @@ import com.gargoylesoftware.htmlunit.HttpMethod;
 import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebRequest;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;*/
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import java.io.IOException;
-
+*/
 public class HtmlUnitExample {
-	public static void main(String[] args) throws IOException, Exception{
+	public static void main(String[] args) throws Exception{
 		/*
 		int deneme = 0;
 		WebClient webClient = new WebClient(BrowserVersion.CHROME);
@@ -33,7 +33,7 @@ public class HtmlUnitExample {
 		webClient.getOptions().setThrowExceptionOnFailingStatusCode(true);
 		webClient.getOptions().setThrowExceptionOnScriptError(true);
 		webClient.getOptions().setPrintContentOnFailingStatusCode(true);
-		WebRequest request = new WebRequest(new URL("http://www.simpleweb.org/"), HttpMethod.GET);
+		WebRequest request = new WebRequest(new URL("http://localhost/solar"), HttpMethod.GET);
 		try {
 		    HtmlPage page = webClient.getPage(request);
 		    webClient.waitForBackgroundJavaScript(10000);
@@ -54,6 +54,7 @@ public class HtmlUnitExample {
 		    }
 		}
 		*/
+		
 	}
 	
 }
