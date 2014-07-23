@@ -27,7 +27,7 @@
 	<classpathentry kind="var" path="TRAINING_VARIABLES/cssparser-0.9.14.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/fluent-hc-4.3.4.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-2.15.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-core-js-2.15.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-core-js-2.15.jar" sourcepath="/TRAINING_VARIABLES"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-4.3.3.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-4.3.4.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-cache-4.3.4.jar"/>
