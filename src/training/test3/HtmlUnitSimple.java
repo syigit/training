@@ -1,6 +1,7 @@
 package training.test3;
 
 import java.io.IOException;
+
 import java.net.URL;
 /*import java.util.Collections;
 import java.util.List;
@@ -11,6 +12,9 @@ import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebRequest;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+/**
+ * @author MustafaBICER
+ */
 public class HtmlUnitSimple {
 public static void main(String args []) throws FailingHttpStatusCodeException, IOException, IOException
 {
