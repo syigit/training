@@ -53,5 +53,8 @@
 	<classpathentry kind="var" path="TRAINING_VARIABLES/jsoup-1.7.3.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/log4j-1.2.16.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02-javadoc.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02-sources.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

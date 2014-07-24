@@ -47,8 +47,8 @@ public class JavaScriptStrogeAndExec {
 			 {
 				 if (link.attr("src")!="")
 				 {
-			     System.out.println(website+link.attr("src"));
-				 fileOut.println(website+link.attr("src"));
+			     System.out.println(link.attr("src"));
+				 fileOut.println(link.attr("src"));
 				 } 
 			 }
 			  fileOut.close();

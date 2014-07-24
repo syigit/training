@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,6 +20,7 @@ public class WebLinkStroge{
 	 */
 	public static void main(String [] args) throws IOException
 	{ 
+		
 		/**
 		 * @param doc varsayilan site dokumanimizdir.
 		 * @param links sitedeki doc.select ile sectigimiz satirlari tutar.
@@ -29,11 +31,9 @@ public class WebLinkStroge{
          PrintWriter fileOut = new PrintWriter(outFile);
 		 for (Element link:links)
 		 {
-			 System.out.println(link.attr("href")); 
-			 fileOut.println(link.attr("href"));
-
+			 System.out.println("http://safkoy.com/"+link.attr("href").replaceAll("http://www.safkoy.com/", "").replaceAll("//", "")); 
+		//	 fileOut.println(link.attr("href"));
 		 }
-        
          fileOut.close();
 	}
 	}
