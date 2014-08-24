@@ -81,7 +81,7 @@ public static void ExecuteJavaScript(String website) throws IOException
        for(int j=0;j<i;j++)
        {
        //	System.out.println(j+"nci script "+dizi[j]);
-    	   page.executeJavaScript(dizi[j]);
+    	   page.executeJavaScript(dizi[j]);    	   
        }
    //	page.executeJavaScript("http://www.safkoy.com/jslib/idea.js");
     /*   System.out.println("Hangi Script Çalýþtýrýlsýn?");
@@ -90,5 +90,4 @@ public static void ExecuteJavaScript(String website) throws IOException
        */
     reader.close();	
 }
-
 }
