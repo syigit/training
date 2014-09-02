@@ -1,19 +1,19 @@
 package training.test3;
-import java.awt.Desktop;
+
 import java.io.IOException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-
-
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Scanner;
-
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import com.thoughtworks.selenium.Selenium;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
 /**
  * @author MustafaBICER
  * @since 08.07.2014
@@ -25,6 +25,8 @@ public class WebLinkStroge{
 	 * @throws IOException hata ayiklar
 	 * @throws URISyntaxException 
 	 */
+	public static Selenium selenium,selenium2;
+	
 	public static Scanner scanPage;
 	public static void main(String [] args) throws IOException, URISyntaxException
 	{ 
@@ -41,29 +43,39 @@ public class WebLinkStroge{
 		 Elements links = doc.select("a");
 		 FileWriter outFile = new FileWriter(new File("fetch_status.txt"));
          PrintWriter fileOut = new PrintWriter(outFile);
-         //Desktop d=Desktop.getDesktop();
+     	
+          WebDriver driver =new FirefoxDriver();
+        WebDriver driver2 =new FirefoxDriver();
+		String baseUrl = page;
+		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+		selenium2=new WebDriverBackedSelenium(driver2, baseUrl);
+
          String a;
          Document doc2;
+         Elements links2;
 		 for (Element link:links)
 		 {
-			// System.out.println("http://demo.segmentify.com/"+link.attr("href").replaceAll("http://demo.segmentify.com/", "").replaceAll("//", "")); 
+			 try
+			 {
 		 doc2=Jsoup.connect(page+link.attr("href").replaceAll(page, "").replaceAll("//", "")).post();
-			
-			 Elements links2 = doc2.select("a");
+			 links2 = doc2.select("a");
+			 }
+			 catch(Exception e)
+			 {continue;}
 			 for (Element link2:links2)
 			 {
-				
-			a=page+link2.attr("href").replaceAll(page, "").replaceAll("//", "");
-				 if ( a.contains(".html"))
-				 { 
+				try
+				{
+					 a=page+link2.attr("href").replaceAll(page, "").replaceAll("//", "");
+					 
 					 fileOut.println(a);
 					 System.out.println(a);
-					 
-					// d.browse(new URI(a));	 
-				 }
-			 }
-			 
-			 }
+					 selenium.open(a);
+				     selenium2.open("http://qa.n11.com/fortest-P16612836");
+				
+				}
+				catch(Exception e)
+				{continue;}
+			 } }
          fileOut.close();
-	}
-}
+	} }
