@@ -6,7 +6,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="inputs"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/apache-mime4j-0.6.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/batik-1.1.1.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/bsh-1.3.0.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/cglib-nodep-2.1_3.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-codec-1.6.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-codec-1.9-javadoc.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-codec-1.9-sources.jar"/>
@@ -15,34 +18,72 @@
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-codec-1.9.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-collections-3.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-exec-1.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-io-2.4-javadoc.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-io-2.4-sources.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-io-2.4-test-sources.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-io-2.4-tests.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-io-2.4.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-jxpath-1.3.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-lang3-3.2.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-lang3-3.3.2-javadoc.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-lang3-3.3.2.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/commons-logging.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/crawler4j-3.3.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/cssparser-0.9.11.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/cssparser-0.9.14.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/fluent-hc-4.3.4.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/guava-15.0.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-2.14.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-2.15-OSGi.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-2.15.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-core-js-2.15.jar" sourcepath="/TRAINING_VARIABLES"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-core-js-2.14.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/htmlunit-core-js-2.15.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-4.3.2.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-4.3.3.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-4.3.4.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpclient-cache-4.3.4.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/httpcore-4.3.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpcore-4.3.2.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/httpmime-4.3.2.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpmime-4.3.3.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/httpmime-4.3.4.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ini4j-0.5.2.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/jcommander-1.29.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/jetty-http-8.1.15.v20140411.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/jetty-io-8.1.15.v20140411.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/jetty-util-8.1.15.v20140411.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/jetty-websocket-8.1.15.v20140411.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/jetty-websocket-8.1.8.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/jna-3.4.0.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/jna-platform-3.4.0.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/json-20080701.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/jsoup-1.7.2.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/jsoup-1.7.3.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/junit-4.11.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/junit-dep-4.11.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/junit4-4.8.2.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/log4j-1.2.16.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/log4j-1.2.17.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/nekohtml-1.9.20.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/nekohtml-1.9.21.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/nekohtml.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/operadriver-1.5.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02-javadoc.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02-sources.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/phantomjsdriver-1.1.0.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/protobuf-java-2.4.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/sac-1.3.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/selenium-java-2.42.2-srcs.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/selenium-java-2.42.2.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/serializer-2.7.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/serializer.jar"/>
+	<classpathentry kind="var" path="TRAINING_VARIABLES/testng-6.8.5.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xalan-2.7.1.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xalan.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xercesImpl-2.11.0.jar"/>
@@ -50,11 +91,5 @@
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xml-apis.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xsltc.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/jsoup-1.7.3.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/log4j-1.2.16.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02-javadoc.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02-sources.jar"/>
-	<classpathentry kind="var" path="TRAINING_VARIABLES/ostermillerutils-1.08.02.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
