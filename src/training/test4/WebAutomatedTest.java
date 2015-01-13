@@ -6,12 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import com.thoughtworks.selenium.Selenium;
 /**
  * @author MustafaBICER
  * @since 26.12.2014
  */
 public class WebAutomatedTest {
+	
 	public static WebDriver driver =new FirefoxDriver();
 	public static Selenium selenium;
 	public static void main(String [] args)throws IOException, URISyntaxException, InterruptedException

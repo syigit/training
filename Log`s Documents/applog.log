@@ -2809,3 +2809,4 @@ net.sourceforge.htmlunit.corejs.javascript.EvaluatorException: Unexpected end of
 == CALLING JAVASCRIPT ==
 http://demo.segmentify.com/skin/frontend/rwd/default/js/minicart.js
 ======= EXCEPTION END ========
+13.01.2015 10:29:47  INFO (WebAutomatedTest.java:27) - Baglanti saglandi
