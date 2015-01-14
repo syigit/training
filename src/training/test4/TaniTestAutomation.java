@@ -11,16 +11,24 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import com.thoughtworks.selenium.Selenium;
-
+/**
+ * @author MustafaBICER
+ */
 public class TaniTestAutomation {
 	public static WebDriver driver = new FirefoxDriver();
 	public static Selenium selenium;
-
 	public static void main(String[] args) throws IOException,
 			URISyntaxException, InterruptedException {
+		long baslangic = System.currentTimeMillis();
 		connect_Tani();
 		yeniHedefListe();
+		long bitis = System.currentTimeMillis();
+		long gecenSure = bitis - baslangic;
+		System.out.println("Test Baþarýyla Tamamlandý\n");
+		System.out.println("Ýþlem Süresi: " + gecenSure);
 	}
 
 	/**
@@ -36,7 +44,6 @@ public class TaniTestAutomation {
 		loginBtn.submit();
 
 	}
-
 	/**
 	 * yeniHedefListe() yeni hedef liste oluþturmamýz için gereken test
 	 * adýmlarýný yapan methodumuz
@@ -74,40 +81,45 @@ public class TaniTestAutomation {
 			WebElement viewFile = driver.findElement(By
 					.id("fileTargetListPreview"));
 			viewFile.click();// Dosya önizleme butonuna týklanýr
-			Thread.sleep(5000);// popup`ýn açýlmasý beklenir
-			WebElement viewPopup = driver.findElement(By
-					.className("modal-header"));
-			WebElement closeButton = driver.findElement(By.className("close"));// popup`daki
-																				// close
-																				// butonu
-																				// bulunur
+			WebDriverWait wait = new WebDriverWait(driver, 100000);
+			WebElement viewPopup = wait.until(ExpectedConditions
+					.elementToBeClickable(By.className("modal-header")));// popup`ýn
+																			// açýlmasý
+																			// beklenir
+			WebElement closeButton = viewPopup.findElement(By
+					.className("close"));// popup`daki
+											// close
+											// butonu
+											// bulunur
 			try {// butona týklama iþlemi olumsuz sonuçlanýrsa popup açýlmamýþ
 					// demektir bu yüzden try-catch ile bu iþlemler yapýlýr.
 				closeButton.click();
 				listName.submit();
-				Thread.sleep(5000);
 				try {
-					WebElement okButton = driver.findElement(By
-							.className("btn-primary"));
+					WebDriverWait wait2 = new WebDriverWait(driver, 100000);
+					WebElement okButton = wait2.until(ExpectedConditions
+							.elementToBeClickable(By.className("btn-primary")));
 					okButton.click();
-
 				} catch (Exception e) {
 					System.out.println("Kayýt Tamamlanamadý");
 					driver.quit();
 				}
-
-			}
-
-			catch (Exception e) {
+			} catch (Exception e) {
 				System.out.println("Popup gösterilemedi");
 			}
 		} catch (Exception e) {
 			System.out.println("Uygulama Sonlandýrýldý.");
-			File scrFile = ((TakesScreenshot) driver)//hata durumunda ekran alýntýsý alýnýr
+			File scrFile = ((TakesScreenshot) driver)// hata durumunda ekran
+														// alýntýsý alýnýr
 					.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File(
-					"C:\\Users\\mustafa\\Desktop\\YeniHedefListe.png"));//ekran alýntýsý bu konuma kaydedilir.
+					"C:\\Users\\mustafa\\Desktop\\YeniHedefListe.png"));// ekran
+																		// alýntýsý
+																		// bu
+																		// konuma
+																		// kaydedilir.
 		} finally {
+
 			driver.quit();
 		}
 	}
