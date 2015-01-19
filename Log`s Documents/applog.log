@@ -1,6 +1,0 @@
-15.01.2015 11:57:01  INFO (RetryExec.java:94) - I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:7055: Connection reset
-15.01.2015 11:57:01  INFO (RetryExec.java:110) - Retrying request to {}->http://127.0.0.1:7055
-15.01.2015 16:19:15  INFO (RetryExec.java:94) - I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:7056: Connection reset
-15.01.2015 16:19:15  INFO (RetryExec.java:110) - Retrying request to {}->http://127.0.0.1:7056
-15.01.2015 16:29:25  INFO (RetryExec.java:94) - I/O exception (java.net.SocketException) caught when processing request to {}->http://127.0.0.1:7056: Connection reset
-15.01.2015 16:29:25  INFO (RetryExec.java:110) - Retrying request to {}->http://127.0.0.1:7056
