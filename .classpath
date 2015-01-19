@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="Log Documents"/>
 	<classpathentry kind="src" path="JavaDoc`s Documents"/>
 	<classpathentry kind="src" path=".settings"/>
 	<classpathentry kind="src" path="src"/>
