@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path=".settings"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="inputs"/>
+	<classpathentry kind="src" path="Log Documents"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/apache-mime4j-0.6.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/batik-1.1.1.jar"/>
