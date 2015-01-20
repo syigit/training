@@ -13,30 +13,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
-//import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 /**
  * @author MustafaBICER
  */
-public class TaniTestAutomation {
-	private static org.apache.log4j.Logger log = Logger.getLogger(TaniTestAutomation.class);
+public class TaniTestAutomationChromeVersion {
+	private static org.apache.log4j.Logger log = Logger.getLogger(TaniTestAutomationChromeVersion.class);
 	public static Scanner selectMenu;
-	public static WebDriver driver = new FirefoxDriver();
-	public static TaniTestAutomationChromeVersion chromeVersion;
-	//public static WebDriver driver;
+	public static WebDriver driver;
 	static String failedSteps=" ";
 	static String screeenshotDirectory="C:\\Users\\mustafa\\Desktop\\";
+	
 	public static void main(String[] args) throws IOException,
 			URISyntaxException, InterruptedException {
 		try
-		{
-			//driver.manage().window().setPosition(new Point(-2000, 0)); Browser`ı ekran dışında tutma
+		{  System.setProperty("webdriver.chrome.driver", "C:/Users/mustafa/Desktop/chromedriver/chromedriver.exe");
+		   driver=new ChromeDriver();	
 			long baslangic = System.currentTimeMillis();
 			connect_Tani();
 			yeniHedefListe("EKSTRA PUAN","Test Gönderim","Dosya Hedef Kitlesi");
@@ -434,7 +431,7 @@ public class TaniTestAutomation {
 	 */
 		public static WebElement searchElement(WebDriver driver,String cssText) throws Exception
 		{
-			WebDriverWait wait = new WebDriverWait(driver, 100);
+			WebDriverWait wait = new WebDriverWait(driver, 1000);
 			WebElement element;
 			try
 			{
