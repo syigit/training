@@ -17,24 +17,25 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 /**
  * @author MustafaBICER
  */
-public class TaniTestAutomation {
+public class TaniTestAutomationIEversion {
 	private static org.apache.log4j.Logger log = Logger
-			.getLogger(TaniTestAutomation.class);
+			.getLogger(TaniTestAutomationIEversion.class);
 	public static Scanner selectMenu;
-	public static WebDriver driver = new FirefoxDriver();
+	public static WebDriver driver;
 	static String failedSteps = " ";
 	static String screeenshotDirectory = "C:\\Users\\mustafa\\Desktop\\";
 
 	public static void main(String[] args) throws IOException,
 			URISyntaxException, InterruptedException {
 		try {
+			System.setProperty("webdriver.ie.driver", "C:/Users/mustafa/Desktop/SeleniumWebDrivers/IEDriverServer.exe");
+			driver=new InternetExplorerDriver();
 			// driver.manage().window().setPosition(new Point(-2000, 0));
 			// Browser`ı ekran dışında tutma
 			long baslangic = System.currentTimeMillis();
