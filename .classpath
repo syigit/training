@@ -91,5 +91,14 @@
 	<classpathentry kind="var" path="TRAINING_VARIABLES/xsltc.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/selenium-java-2.42.2-srcs.jar"/>
 	<classpathentry kind="var" path="TRAINING_VARIABLES/selenium-java-2.42.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itextpdf-5.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itextpdf-5.5.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itextpdf-5.5.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itext-pdfa-5.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itext-pdfa-5.5.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itext-pdfa-5.5.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itext-xtra-5.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itext-xtra-5.5.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mustafa/Desktop/itext-5.5.4/itext-xtra-5.5.4-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

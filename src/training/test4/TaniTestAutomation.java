@@ -1,7 +1,8 @@
 package training.test4;
-
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,11 +21,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 /**
  * @author MustafaBICER
  */
 public class TaniTestAutomation {
+	public static String [][]dizi=new String[50][50];
+	static int k=0;
 	private static org.apache.log4j.Logger log = Logger
 			.getLogger(TaniTestAutomation.class);
 	public static Scanner selectMenu;
@@ -33,7 +42,7 @@ public class TaniTestAutomation {
 	static String screeenshotDirectory = "C:\\Users\\mustafa\\Desktop\\";
 
 	public static void main(String[] args) throws IOException,
-			URISyntaxException, InterruptedException {
+			URISyntaxException, InterruptedException, DocumentException {
 		try {
 			// driver.manage().window().setPosition(new Point(-2000, 0));
 			// Browser`ı ekran dışında tutma
@@ -51,18 +60,21 @@ public class TaniTestAutomation {
 			KampanyaGonderimiSms("Tekil Gönderim", "EKSTRA PUAN", "Vodafone");
 			long bitis = System.currentTimeMillis();
 			long gecenSure = bitis - baslangic;
+			
 			if (failedSteps != " ") {
 				log.info("Failed Steps: " + failedSteps);
 			}
 			log.info("Test Succeed " + "Elapsed Time: " + gecenSure / 1000
 					+ " Seconds");
+			createPdf();
 			// yeniHedefListe("EKSTRA PUAN","Gerçek Gönderim","Sorgu Hedef Kitlesi");
 			// KampanyaGonderimiSms("Çoğul Gönderim","EKSTRA PUAN","Vodafone");
 		} catch (Exception e) {
-
 			System.out.println(e.getMessage());
 			screenShot("Main");
 			log.error("Application Stoped");
+			createPdf();
+			
 		} finally {
 			driver.quit();
 		}
@@ -170,9 +182,15 @@ public class TaniTestAutomation {
 										.className("btn-primary")));
 						okButton.click();
 						if (targetType == "Gerçek Gönderim")
-							log.info("newRealTargetList Created");
+						{	log.info("newRealTargetList Created");
+						 dizi[k][k]=" New RealTarget List Create";
+					      dizi[k][k+1]="Pass";    
+					      k++;}
 						else
-							log.info("newTestTargetList Created");
+						{	log.info("newTestTargetList Created");
+						 dizi[k][k]=" New TestTarget List Create";
+					      dizi[k][k+1]="Pass";    
+					      k++;}
 					} catch (Exception e) {
 						log.error("Registry Error");
 						screenShot("newTargetListRegistry");
@@ -185,12 +203,14 @@ public class TaniTestAutomation {
 		} catch (Exception e) {
 
 			failedSteps += "\n New Target List Create";
+		     dizi[k][k]=" New Target List Create";
+		      dizi[k][k+1]="Fail";    
+		      k++;
 			System.out.println(e.getMessage());
 			screenShot("newTargetList");
 			log.error("Application Stopped");
 		}
 	}
-
 	public static void KampanyaGonderimiEmail(String castType, String friend,
 			String rate, String companyName, String speed)
 			throws InterruptedException, IOException {
@@ -293,6 +313,9 @@ public class TaniTestAutomation {
 				alert2Text = alert2.getText();
 				if (alert1Text != alert2Text) {
 					log.info("Test Send Succeed");
+					 dizi[k][k]="Campaign Test Send Email (" + castType + ")";
+				      dizi[k][k+1]="Pass";    
+				      k++;
 					log.info("Real Send Starting...");
 					WebElement acceptSend = driver.findElement(By
 							.cssSelector("input.campaignTestApprove.uniform"));
@@ -311,6 +334,9 @@ public class TaniTestAutomation {
 					while (count < 60) {
 						if (url.contains(driver.getCurrentUrl().toString())) {
 							log.info("Real Send Succeed");
+							 dizi[k][k]="Campaign Real Send Email (" + castType + ")";
+						      dizi[k][k+1]="Pass";    
+						      k++;
 
 							break;
 						} else {
@@ -326,6 +352,9 @@ public class TaniTestAutomation {
 				log.error("Registry Error");
 		} catch (Exception e) {
 			failedSteps += "\n Campaign Send Email (" + castType + ")";
+			 dizi[k][k]="Campaign Send Email (" + castType + ")";
+		      dizi[k][k+1]="Fail";    
+		      k++;
 			System.out.println(e.getMessage());
 			screenShot("SendCampaignEmail(" + castType + ")");
 			log.error("Application Stopped");
@@ -470,7 +499,6 @@ public class TaniTestAutomation {
 			log.error("Not Connecting");
 		}
 	}
-
 	/**
 	 * 
 	 * @param driver
@@ -493,7 +521,6 @@ public class TaniTestAutomation {
 			throw new Exception("Bulunamadi");
 		}
 	}
-
 	public static void screenShot(String methodName) throws IOException {
 		DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy_hh_mm");
 		Date date = new Date();
@@ -508,4 +535,39 @@ public class TaniTestAutomation {
 		log.info("File: " + screeenshotDirectory + methodName
 				+ dateFormat.format(date) + ".png");
 	}
+	//----------------------Reports--------------------------------
+	public static PdfPTable createFirstTable(String [][] testCases) {
+    	// a table with three columns
+        PdfPTable table = new PdfPTable(3);
+        // the cell object
+        PdfPCell cell;
+        // we add a cell with colspan 3
+        cell = new PdfPCell(new Phrase("Test Case Name"));
+        cell.setColspan(2);
+        table.addCell(cell);
+        table.addCell("Fail/Pass");
+        // now we add a cell with rowspan 2
+        cell = new PdfPCell(new Phrase(testCases[0][0].toString()));
+        cell.setColspan(2);
+        table.addCell(cell);
+       for(int i=0;i<k;i++)
+        {
+    	   table.addCell(testCases[i][i+1].toString());
+        }
+    // we add the four remaining cells with addCell()
+       return table;
+        }
+ public static  void createPdf() throws DocumentException, MalformedURLException, IOException
+ {
+	  Document document = new Document();
+      PdfWriter.getInstance(document, new FileOutputStream("C://Users/mustafa/Desktop/deneme.pdf"));
+      document.open();     
+ 
+      document.add(createFirstTable(dizi));
+        String imageUrl = "C://Users/mustafa/Desktop/infoowl.jpg";
+        Image image2 = Image.getInstance(imageUrl);
+        document.add(image2);
+        document.newPage();
+	    document.close();
+	  }
 }

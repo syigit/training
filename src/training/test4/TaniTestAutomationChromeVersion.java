@@ -7,6 +7,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -20,6 +21,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 /**
  * @author MustafaBICER
  */
@@ -33,16 +35,16 @@ public class TaniTestAutomationChromeVersion {
 	public static void main(String[] args) throws IOException,
 			URISyntaxException, InterruptedException {
 		try {
-			System.setProperty("webdriver.chrome.driver", "C:/Users/mustafa/Desktop/SeleniumWebDrivers/chromedriver_windows.exe");
+			System.setProperty("webdriver.chrome.driver", "C:/Users/mustafa/Desktop/SeleniumWebDrivers/chromedriver.exe");
 			driver=new ChromeDriver();
 			// driver.manage().window().setPosition(new Point(-2000, 0));
 			// Browser`ı ekran dışında tutma
 			long baslangic = System.currentTimeMillis();
 			connect_Tani();
-			yeniHedefListe("EKSTRA PUAN", "Test Gönderim",
-					"Dosya Hedef Kitlesi");
-			yeniHedefListe("EKSTRA PUAN", "Gerçek Gönderim",
-					"Dosya Hedef Kitlesi");
+			yeniHedefListe("EKSTRA PUAN", "T",
+					"D");
+			yeniHedefListe("EKSTRA PUAN", "G",
+					"D");
 			KampanyaGonderimiEmail("Tekil Gönderim", "Pasif", "Aktif",
 					"EKSTRA PUAN", "Aktif");
 			KampanyaGonderimiEmail("Çoğul Gönderim", "Pasif", "Aktif",
@@ -90,7 +92,7 @@ public class TaniTestAutomationChromeVersion {
 			listName.sendKeys("Hedef Kitle" + unixTime);
 			WebElement selectCompany;
 			selectCompany = searchElement(driver,
-					"#s2id_branch>a>.select2-chosen");
+					"div.form-body>fieldset:nth-of-type(1)>div:nth-of-type(2)>div>div>a");
 			selectCompany.click();
 			selectCompany.sendKeys(companyName);
 			selectCompany.sendKeys(Keys.RETURN);// işyeri seçiliyor
@@ -482,7 +484,7 @@ public class TaniTestAutomationChromeVersion {
 	 */
 	public static WebElement searchElement(WebDriver driver, String cssText)
 			throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 1000);
+		WebDriverWait wait = new WebDriverWait(driver, 10000);
 		WebElement element;
 		try {
 			element = wait.until(ExpectedConditions.elementToBeClickable(By
