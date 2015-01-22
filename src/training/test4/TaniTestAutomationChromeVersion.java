@@ -1,7 +1,9 @@
 package training.test4;
-
+import java.awt.Color;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -10,6 +12,11 @@ import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.title.TextTitle;
+import org.jfree.data.general.DefaultPieDataset;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -22,49 +29,68 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 /**
  * @author MustafaBICER
  */
 public class TaniTestAutomationChromeVersion {
+	public static String [][]dizi=new String[50][50];
+	static int k,k_fail,k_pass;
 	private static org.apache.log4j.Logger log = Logger
 			.getLogger(TaniTestAutomationChromeVersion.class);
 	public static Scanner selectMenu;
+	public static long gecenSure;
 	public static WebDriver driver;
 	static String failedSteps = " ";
 	static String screeenshotDirectory = "C:\\Users\\mustafa\\Desktop\\";
+
 	public static void main(String[] args) throws IOException,
-			URISyntaxException, InterruptedException {
+			URISyntaxException, InterruptedException, DocumentException {
 		try {
+			k=0;
 			System.setProperty("webdriver.chrome.driver", "C:/Users/mustafa/Desktop/SeleniumWebDrivers/chromedriver.exe");
-			driver=new ChromeDriver();
+			driver=new ChromeDriver(); 
 			// driver.manage().window().setPosition(new Point(-2000, 0));
 			// Browser`ı ekran dışında tutma
 			long baslangic = System.currentTimeMillis();
 			connect_Tani();
-			yeniHedefListe("EKSTRA PUAN", "T",
-					"D");
-			yeniHedefListe("EKSTRA PUAN", "G",
-					"D");
-			KampanyaGonderimiEmail("Tekil Gönderim", "Pasif", "Aktif",
+			yeniHedefListe("EKSTRA PUAN", "Test Gönderim",
+					"Dosya Hedef Kitlesi");
+			yeniHedefListe("EKSTRA PUAN", "Gerçek Gönderim",
+					"Dosya Hedef Kitlesi");
+			KampanyaGonderimiEmail("Single Send", "Pasif", "Aktif",
 					"EKSTRA PUAN", "Aktif");
-			KampanyaGonderimiEmail("Çoğul Gönderim", "Pasif", "Aktif",
+			KampanyaGonderimiEmail("Multi Send", "Pasif", "Aktif",
 					"EKSTRA PUAN", "Aktif");
-			KampanyaGonderimiSms("Çoğul Gönderim", "EKSTRA PUAN", "Vodafone");
-			KampanyaGonderimiSms("Tekil Gönderim", "EKSTRA PUAN", "Vodafone");
+			KampanyaGonderimiSms("Multi Send", "EKSTRA PUAN", "Vodafone");
+			KampanyaGonderimiSms("Single Send", "EKSTRA PUAN", "Vodafone");
 			long bitis = System.currentTimeMillis();
-			long gecenSure = bitis - baslangic;
+			gecenSure = bitis - baslangic;
+			
 			if (failedSteps != " ") {
 				log.info("Failed Steps: " + failedSteps);
 			}
 			log.info("Test Succeed " + "Elapsed Time: " + gecenSure / 1000
 					+ " Seconds");
+			createPdf();
 			// yeniHedefListe("EKSTRA PUAN","Gerçek Gönderim","Sorgu Hedef Kitlesi");
-			// KampanyaGonderimiSms("Çoğul Gönderim","EKSTRA PUAN","Vodafone");
+			// KampanyaGonderimiSms("Multi Send","EKSTRA PUAN","Vodafone");
 		} catch (Exception e) {
-
 			System.out.println(e.getMessage());
 			screenShot("Main");
 			log.error("Application Stoped");
+			createPdf();
+			
 		} finally {
 			driver.quit();
 		}
@@ -129,17 +155,34 @@ public class TaniTestAutomationChromeVersion {
 						WebElement okButton = searchElement(driver,
 								".btn.btn-primary");
 						if (targetType == "Gerçek Gönderim")
+						{
 							log.info("newRealTargetList Created");
+						 dizi[k][k]="New RealTarget List Create";
+					      dizi[k][k+1]="Pass";    
+					      k++;
+						}
 						else
+						{
 							log.info("newTestTargetList Created");
+							 dizi[k][k]="New TestTarget List Create";
+						      dizi[k][k+1]="Pass";    
+						      k++;	
+						}
+						
 						okButton.click();
 					} catch (Exception e) {
 						screenShot("newTestTargetList");
 						log.error("Registry Error");
+						 dizi[k][k]=" New TestTarget List Create";
+					      dizi[k][k+1]="Fail";    
+					      k++;	
 					}
 				} catch (Exception e) {
 					screenShot("newTargetListPopup");
 					log.error("Popup Error");
+					 dizi[k][k]=" New TestTarget List Create";
+				      dizi[k][k+1]="Fail";    
+				      k++;	
 				}
 			}
 			// -------Sorgu Hedef Kitlesi Seçildiyse---------------
@@ -172,27 +215,41 @@ public class TaniTestAutomationChromeVersion {
 										.className("btn-primary")));
 						okButton.click();
 						if (targetType == "Gerçek Gönderim")
-							log.info("newRealTargetList Created");
+						{	log.info("newRealTargetList Created");
+						 dizi[k][k]="New RealTarget List Create";
+					      dizi[k][k+1]="Pass";    
+					      k++;}
 						else
-							log.info("newTestTargetList Created");
+						{	log.info("newTestTargetList Created");
+						 dizi[k][k]="New TestTarget List Create";
+					      dizi[k][k+1]="Pass";    
+					      k++;}
 					} catch (Exception e) {
 						log.error("Registry Error");
 						screenShot("newTargetListRegistry");
+						 dizi[k][k]=" New"+targetType+" Target List Create";
+					      dizi[k][k+1]="Fail";    
+					      k++;	
 					}
 				} catch (Exception e) {
 					screenShot("newTargetListRegistryPopup");
 					log.error("Popup Error");
+					 dizi[k][k]=" New"+targetType+" Target List Create";
+				      dizi[k][k+1]="Fail";    
+				      k++;	
 				}
 			}
 		} catch (Exception e) {
 
 			failedSteps += "\n New Target List Create";
+			 dizi[k][k]=" New"+targetType+" Target List Create";
+		      dizi[k][k+1]="Fail";    
+		      k++;	
 			System.out.println(e.getMessage());
 			screenShot("newTargetList");
 			log.error("Application Stopped");
 		}
 	}
-
 	public static void KampanyaGonderimiEmail(String castType, String friend,
 			String rate, String companyName, String speed)
 			throws InterruptedException, IOException {
@@ -209,7 +266,7 @@ public class TaniTestAutomationChromeVersion {
 			sendSelect.sendKeys(castType);
 			sendSelect.sendKeys(Keys.RETURN);// gönderim kurgusu seçildi✓
 			// -----------------------------------------------------------------------
-			if (castType == "Tekil Gönderim") {
+			if (castType == "Single Send") {
 				WebElement shareFriend = searchElement(driver,
 						"#emailCampaignShareThisFlag");
 				shareFriend.click();
@@ -218,7 +275,7 @@ public class TaniTestAutomationChromeVersion {
 													// pasif/aktif✓
 			}
 			// -----------------------------------------------------------------------
-			if (castType == "Tekil Gönderim") {
+			if (castType == "Single Send") {
 				WebElement rateFlag = searchElement(driver,
 						"#emailCampaignRateFlag");
 				rateFlag.click();
@@ -240,7 +297,7 @@ public class TaniTestAutomationChromeVersion {
 					"#emailCampaignSubjects>div>div>.form-control");
 			subjectText.sendKeys("Test Subject");// Subject girişi yapılıyor ✓
 			// -------------------------------------------------------------------------
-			if (castType == "Tekil Gönderim") {
+			if (castType == "Single Send") {
 				WebElement speedPost = searchElement(driver,
 						"#emailCampaignDirectSendFlag");
 				speedPost.click();
@@ -259,7 +316,7 @@ public class TaniTestAutomationChromeVersion {
 			// -------------------------------------------------------------------------
 			driver.switchTo().frame("emailCampaignMessage_ifr");
 			WebElement messageContent = searchElement(driver, "#tinymce");
-			messageContent.sendKeys("Mesaj içeriği"); // mesaj içeriği
+			messageContent.sendKeys("Mesaj icerigi"); // mesaj içeriği
 														// giriliyor✓
 			// -------------------------------------------------------------------------
 			driver.switchTo().defaultContent();
@@ -295,6 +352,9 @@ public class TaniTestAutomationChromeVersion {
 				alert2Text = alert2.getText();
 				if (alert1Text != alert2Text) {
 					log.info("Test Send Succeed");
+					 dizi[k][k]="Campaign Test Send Email (" + castType + ")";
+				      dizi[k][k+1]="Pass";    
+				      k++;
 					log.info("Real Send Starting...");
 					WebElement acceptSend = driver.findElement(By
 							.cssSelector("input.campaignTestApprove.uniform"));
@@ -313,6 +373,9 @@ public class TaniTestAutomationChromeVersion {
 					while (count < 60) {
 						if (url.contains(driver.getCurrentUrl().toString())) {
 							log.info("Real Send Succeed");
+							 dizi[k][k]="Campaign Real Send Email (" + castType + ")";
+						      dizi[k][k+1]="Pass";    
+						      k++;
 
 							break;
 						} else {
@@ -320,14 +383,31 @@ public class TaniTestAutomationChromeVersion {
 							count++;
 						}
 						if (count >= 60)
-							log.error("Real Send Failed");
+						{	log.error("Real Send Failed");
+						 dizi[k][k]="Campaign Real Send Email (" + castType + ")";
+					      dizi[k][k+1]="Fail";    
+					      k++;
+						}
 					}
 				} else
+				{
 					log.error("Send Failed");
+				 dizi[k][k]="Campaign Real Send Email (" + castType + ")";
+			      dizi[k][k+1]="Fail";    
+			      k++;
+				}
 			} else
+			{
 				log.error("Registry Error");
+				 dizi[k][k]="Campaign Real Send Email (" + castType + ")";
+			      dizi[k][k+1]="Fail";    
+			      k++;	
+			}
 		} catch (Exception e) {
 			failedSteps += "\n Campaign Send Email (" + castType + ")";
+			 dizi[k][k]="Campaign Send Email (" + castType + ")";
+		      dizi[k][k+1]="Fail";    
+		      k++;
 			System.out.println(e.getMessage());
 			screenShot("SendCampaignEmail(" + castType + ")");
 			log.error("Application Stopped");
@@ -338,7 +418,7 @@ public class TaniTestAutomationChromeVersion {
 			String companyName, String operatorName)
 			throws InterruptedException, IOException {
 		try {
-			if (castType == "Tekil Gönderim")
+			if (castType == "Single Send")
 				log.info("SendCampaignSms (Single) Started");
 			else
 				log.info("SendCampaignSms (Multi) Started");
@@ -407,6 +487,9 @@ public class TaniTestAutomationChromeVersion {
 				alert2Text = alert2.getText();
 				if (alert1Text != alert2Text) {
 					log.info("Test Send Succeed");
+					 dizi[k][k]="Campaign Test Send Sms (" + castType + ")";
+				      dizi[k][k+1]="Pass";    
+				      k++;
 					log.info("Real Send Starting...");
 					WebElement acceptSend = driver.findElement(By
 							.cssSelector(".campaignTestApprove.uniform"));
@@ -424,26 +507,44 @@ public class TaniTestAutomationChromeVersion {
 					while (count < 60) {
 						if (url.contains(driver.getCurrentUrl().toString())) {
 							log.info("Real Send Succeed");
+							 dizi[k][k]="Campaign Real Send Sms (" + castType + ")";
+						      dizi[k][k+1]="Pass";    
+						      k++;
 							break;
 						} else {
 							Thread.sleep(1000);
 							count++;
 						}
-						if (count >= 60)
-							log.error("Real Send Failed");
+						if (count>=60)
+						{
+						 dizi[k][k]="Campaign Real Send Sms (" + castType + ")";
+					      dizi[k][k+1]="Fail";    
+					      k++;
+					 	 log.error("Real Send Failed");
+						}
 					}
 				} else
 				{log.error("Send Failed");
 				screenShot("SendCampaignSmsFailed(" + castType + ")");
+				 dizi[k][k]="Campaign Send Sms (" + castType + ")";
+			      dizi[k][k+1]="Fail";    
+			      k++;
 				}
 			} else
 			{log.error("Registry Error");
-			screenShot("SendCampaignSmsRegistry(" + castType + ")");}
+			screenShot("SendCampaignSmsRegistry(" + castType + ")");
+			 dizi[k][k]="Campaign Send Sms (" + castType + ")";
+		      dizi[k][k+1]="Fail";    
+		      k++;
+			}
 		} catch (Exception e) {
 
 			System.out.println(e.getMessage());
 			// hata durumunda ekran alıntısı alınır
 			failedSteps += "\n Campaing Send Sms (" + castType + ")";
+			 dizi[k][k]="Campaign Send Sms (" + castType + ")";
+		      dizi[k][k+1]="Fail";    
+		      k++;
 			screenShot("SendCampaignSms(" + castType + ")");
 			log.error("Application Stoped");
 		}
@@ -466,13 +567,18 @@ public class TaniTestAutomationChromeVersion {
 			WebElement loginBtn = driver.findElement(By.id("command"));
 			loginBtn.submit();
 			log.info("Connected.");
+			 dizi[k][k]="Tani Connected";
+		      dizi[k][k+1]="Pass";    
+		      k++;
 		} catch (Exception e) {
 			failedSteps += "\n Tani Connect";
 			screenShot("connectTani");
+			 dizi[k][k]="Tani Connected";
+		      dizi[k][k+1]="Fail";    
+		      k++;
 			log.error("Not Connecting");
 		}
 	}
-
 	/**
 	 * 
 	 * @param driver
@@ -484,7 +590,7 @@ public class TaniTestAutomationChromeVersion {
 	 */
 	public static WebElement searchElement(WebDriver driver, String cssText)
 			throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 10000);
+		WebDriverWait wait = new WebDriverWait(driver, 1000);
 		WebElement element;
 		try {
 			element = wait.until(ExpectedConditions.elementToBeClickable(By
@@ -495,7 +601,6 @@ public class TaniTestAutomationChromeVersion {
 			throw new Exception("Bulunamadi");
 		}
 	}
-
 	public static void screenShot(String methodName) throws IOException {
 		DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy_hh_mm");
 		Date date = new Date();
@@ -510,4 +615,98 @@ public class TaniTestAutomationChromeVersion {
 		log.info("File: " + screeenshotDirectory + methodName
 				+ dateFormat.format(date) + ".png");
 	}
+	//----------------------Reports--------------------------------
+	public static PdfPTable createFirstTable(String [][] testCases) {
+    	// a table with three columns
+        PdfPTable table = new PdfPTable(3);
+        // the cell object
+        PdfPCell cell;
+        // we add a cell with colspan 3
+        cell = new PdfPCell(new Phrase("Test Case Name"));
+        cell.setColspan(2);
+        table.addCell(cell);
+        table.addCell("Fail/Pass");
+        // now we add a cell with rowspan 2
+       // cell = new PdfPCell(new Phrase(testCases[0][0].toString()));
+        //cell.setColspan(2);
+        //table.addCell(cell);
+       for(int i=0;i<k;i++)
+        {
+    	   BaseColor defalt = new BaseColor(169, 197, 243);
+    	   BaseColor green = new BaseColor(0,255,0);
+    	   BaseColor red = new BaseColor(255,0,0);
+    	   table.getDefaultCell().setBackgroundColor(defalt);
+    	   cell = new PdfPCell(new Phrase(testCases[i][i].toString()));
+           cell.setColspan(2);
+           table.addCell(cell);
+           if(testCases[i][i+1].toString()=="Pass")
+           {
+        	   table.getDefaultCell().setBackgroundColor(green);
+           table.addCell(testCases[i][i+1].toString());
+           table.getDefaultCell().setBackgroundColor(defalt);
+           k_pass++;
+           }
+           else
+               {
+        	   table.getDefaultCell().setBackgroundColor(red);
+               table.addCell(testCases[i][i+1].toString());
+               table.getDefaultCell().setBackgroundColor(defalt);
+               k_fail++;
+               }
+               
+        }
+    // we add the four remaining cells with addCell()
+       return table;
+        }
+ public static  void createPdf() throws DocumentException, MalformedURLException, IOException
+ {
+	  Document document = new Document();
+	  String imageUrl = "C://Users/mustafa/Desktop/infoowl.jpg";
+      Image image = Image.getInstance(imageUrl);
+      image.setAlignment(1);
+	  DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy_hh_mm");
+	  Date date = new Date();
+      PdfWriter.getInstance(document, new FileOutputStream("C://Users/mustafa/Desktop/"+dateFormat.format(date)+"Chrome"+".pdf"));
+	  document.open();
+	  Paragraph title = new Paragraph("Tani Test Results",new Font(Font.FontFamily.TIMES_ROMAN, 20,Font.UNDERLINE));
+      title.setAlignment(1);
+	  document.add(title);
+	  document.add(image);
+      document.add(createFirstTable(dizi));
+      Paragraph content = new Paragraph("Test Platform: Selenium Web Driver\nTest Browser: Google Chrome 39.0\nElapsed Time: "+gecenSure / 1000+"Seconds",new Font(Font.FontFamily.TIMES_ROMAN, 10));
+      document.add(content);
+      Paragraph missing = new Paragraph("Requirement:\n-Eclipse IDE\n-Jdk 6\n-Selenium Web Driver\n-Google Chrome\n-iText Plugin\n-Log4j Plugin\n",new Font(Font.FontFamily.TIMES_ROMAN, 10));
+      document.add(missing);
+      DefaultPieDataset dataSet = new DefaultPieDataset();
+      dataSet.setValue("Pass", k_pass);
+      dataSet.setValue("Fail", k_fail);
+      JFreeChart chart = ChartFactory.createPieChart(
+              "Result Charts", dataSet, true, true, false);	   
+      PiePlot plot = (PiePlot) chart.getPlot();
+      plot.setSectionPaint("Pass", Color.green);
+      plot.setSectionPaint("Fail", Color.red);
+      plot.setBackgroundPaint(Color.white);
+      plot.setLabelBackgroundPaint(Color.white);
+      plot.setCircular(true);
+      plot.setNoDataMessage("Not Found");
+      plot.setLabelFont(new java.awt.Font("Arial",  java.awt.Font.BOLD, 10));
+      TextTitle titled = chart.getTitle(); 
+      titled.setBorder(0, 0, 2, 0);   
+      titled.setBackgroundPaint(Color.white);
+      titled.setPaint(Color.DARK_GRAY);
+      titled.setExpandToFitSpace(false);
+      java.awt.Image originalImage = chart.createBufferedImage(175, 150);	
+      Image image1 = Image.getInstance(originalImage,null);
+      image1.setAlignment(1);
+      document.add(image1);
+    	 Paragraph creator=new Paragraph("Tested By MustafaBICER", new Font(Font.FontFamily.TIMES_ROMAN, 8));
+    	 creator.setAlignment(Element.ALIGN_RIGHT);
+    	DateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+   		Date date2 = new Date();
+   	 Paragraph subject=new Paragraph(dateFormat2.format(date2)+"\n", new Font(Font.FontFamily.SYMBOL, 8));
+   		subject.setAlignment(Element.ALIGN_RIGHT);
+ 		document.add(creator);
+ 		document.add(subject);
+		 document.close();
+	  }
 }
